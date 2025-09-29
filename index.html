@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <meta name="description" content="Personal portfolio – About, Skills, Projects, Contact" />
+  <style>
+    :root {
+      --accent: #5fad89; /* your preferred green */
+      --bg: #0f1115;
+      --panel: #151821;
+      --text: #e7e9ee;
+      --muted: #a9afbf;
+      --ring: rgba(95, 173, 137, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(60rem 60rem at 80% -10%, rgba(95,173,137,.15), transparent 40%),
+                  radial-gradient(40rem 40rem at -10% -20%, rgba(95,173,137,.12), transparent 50%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* --- Layout --- */
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: saturate(140%) blur(10px);
+      background: linear-gradient(180deg, rgba(21,24,33,.8), rgba(21,24,33,.5));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .nav {
+      max-width: 1080px; margin: 0 auto; padding: .75rem 1rem; display: flex; align-items: center; gap: 1rem;
+    }
+    .brand { font-weight: 800; letter-spacing: .3px; }
+    .brand .dot { color: var(--accent); }
+
+    .spacer { flex: 1; }
+
+    .tabs { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .tab {
+      appearance: none; border: 1px solid rgba(255,255,255,.08); background: transparent; color: var(--text);
+      padding: .45rem .85rem; border-radius: 999px; cursor: pointer; font-weight: 600; letter-spacing: .2px;
+    }
+    .tab:hover { border-color: var(--accent); box-shadow: 0 0 0 3px var(--ring) inset; }
+    .tab.active { background: var(--accent); color: #0e1512; border-color: var(--accent); }
+
+    main { max-width: 1080px; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+    section.section { display: none; }
+    section.section.active { display: block; }
+
+    /* --- Hero --- */
+    .hero {
+      display: grid; grid-template-columns: 1fr; gap: 1.25rem; align-items: center; margin-top: 1.25rem;
+    }
+    @media (min-width: 820px) {
+      .hero { grid-template-columns: 1.2fr .8fr; }
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px; padding: 1.25rem; box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .avatar {
+      width: 140px; height: 140px; border-radius: 999px; background: conic-gradient(from 0deg, var(--accent), #78c7a3, var(--accent));
+      display: grid; place-content: center; color: #0e1512; font-size: 2.2rem; font-weight: 900;
+      border: 6px solid #0e1512; margin: .25rem auto 1rem;
+    }
+
+    h1 { font-size: clamp(1.6rem, 2.4vw + 1rem, 2.6rem); line-height: 1.1; margin: .25rem 0 .5rem; }
+    h2 { font-size: clamp(1.2rem, 1.8vw + .8rem, 1.6rem); margin: .25rem 0 .4rem; }
+    p.lead { color: var(--muted); margin: .35rem 0 1rem; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .75rem; }
+    .btn {
+      border: 1px solid rgba(255,255,255,.1); background: #121722; color: var(--text);
+      padding: .6rem .9rem; border-radius: 12px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: .5rem;
+    }
+    .btn.primary { background: var(--accent); color: #0e1512; border-color: var(--accent); }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(0,0,0,.25); }
+
+    /* --- Grids --- */
+    .grid { display: grid; gap: .85rem; }
+    .grid.cols-2 { grid-template-columns: repeat(1, 1fr); }
+    .grid.cols-3 { grid-template-columns: repeat(1, 1fr); }
+    @media (min-width: 700px) { .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 920px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+
+    .tag { display: inline-block; padding: .35rem .6rem; border-radius: 999px; border: 1px solid rgba(255,255,255,.08); color: var(--muted); font-weight: 600; }
+
+    .list { display: grid; gap: .5rem; margin: .5rem 0 0; padding-left: 1rem; }
+    .list li { margin: 0 0 0 .25rem; }
+
+    /* --- Footer --- */
+    footer { border-top: 1px solid rgba(255,255,255,.06); color: var(--muted); }
+    footer .wrap { max-width: 1080px; margin: 0 auto; padding: 1rem; display: flex; align-items: center; gap: .5rem; }
+
+    /* Simple link styles */
+    a { color: var(--accent); }
+    a:hover { text-decoration: none; }
+
+    /* Focus styles for a11y */
+    :focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Primary">
+      <div class="brand" aria-label="Site brand/logo">Alla Malik<span class="dot">.</span></div>
+      <div class="spacer"></div>
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-target="home" role="tab" aria-selected="true">Home</button>
+        <button class="tab" data-target="about" role="tab" aria-selected="false">About</button>
+        <button class="tab" data-target="skills" role="tab" aria-selected="false">Skills</button>
+        <button class="tab" data-target="projects" role="tab" aria-selected="false">Projects</button>
+        <button class="tab" data-target="contact" role="tab" aria-selected="false">Contact</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME / HERO -->
+    <section id="home" class="section active" aria-labelledby="home-title">
+      <div class="hero">
+        <div class="card">
+          <span class="tag">Software Engineering Student</span>
+          <h1 id="home-title">Hi, I'm <span style="color:var(--accent);">Alaa</span> </h1>
+          <p class="lead">I love building friendly, fast, and accessible web experiences. I'm currently studying Software Engineering and exploring full‑stack development.</p>
+          <div class="actions">
+            <a href="#projects" class="btn primary" data-target="projects">See my work</a>
+            <a href="#contact" class="btn" data-target="contact">Contact me</a>
+          </div>
+        </div>
+        <div class="card" aria-label="Profile photo">
+          <div class="avatar" aria-hidden="true">AM</div>
+          <p class="lead" style="text-align:center;">Photo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+<section id="about" class="section" aria-labelledby="about-title">
+  <div class="card">
+    <h2 id="about-title">About Me</h2>
+    <p>I'm <strong>Alaa</strong>, a Software Engineering student who loves building complete web solutions — from frontend interfaces to backend logic. I enjoy creating clean designs and functional applications that solve real problems.</p>
+    <ul class="list">
+      <li> Skilled in: HTML, CSS, JavaScript, Java, MySQL, Git/GitHub.</li>
+      <li> Passionate about: Web UI/UX design and user-friendly experiences.</li>
+      <li> Currently exploring: responsive layouts, and project deployment.</li>
+    </ul>
+  </div>
+</section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="grid cols-3">
+        <div class="card">
+          <h2 id="skills-title">Core Skills</h2>
+          <ul class="list">
+            <li>HTML5, CSS3, Bootstrap</li>
+            <li>Java (OOP, basic streams)</li>
+            <li>Database MySQL</li>
+            <li>Git & GitHub</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Tools</h2>
+          <ul class="list">
+            <li>VS Code</li>
+            <li>GitHub Desktop / CLI</li>
+            <li>Postman (APIs)</li>
+            <li>Figma (UI drafts)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Soft Skills</h2>
+          <ul class="list">
+            <li>Teamwork & communication</li>
+            <li>Problem solving</li>
+            <li>Time management</li>
+            <li>Documentation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section" aria-labelledby="projects-title">
+        <h2 id="projects-title" style="margin: .25rem 0 1rem;">Projects</h2>
+        <div class="grid cols-2">
+            <article class="card">
+            <h3>Stop Food Waste</h3>
+            <p class="lead">Web app that connects food donors with people in need. Features login (admin/user), donation listings, requests, and Google Maps pickup locations.</p>
+            <div class="actions">
+                <a class="btn" href="#" aria-label="View project code (add GitHub link)">Code</a>
+                <a class="btn" href="#" aria-label="Open live demo (add live link)">Live</a>
+            </div>
+            </article>
+            <article class="card">
+            <h3>Pet Shop Management System</h3>
+            <p class="lead">Desktop app with Admin, Employee, and Customer roles. Manages pets, food, products, orders, and prints PDF bills.</p>
+            <div class="actions">
+                <a class="btn" href="#" aria-label="View project code (add GitHub link)">Code</a>
+                <a class="btn" href="#" aria-label="Open live demo (if any)">Live</a>
+            </div>
+            </article>
+        </div>
+        </section>
+
+   <!-- CONTACT -->
+<section id="contact" class="section" aria-labelledby="contact-title">
+  <div class="card">
+    <h2 id="contact-title">Contact Me</h2>
+    <ul class="list">
+      <li> Email: <a href="mailto:alamalik305@gmail.com">alamalik305@gmail.com</a></li>
+      <li> GitHub: <a href="https://github.com/alamalik" target="_blank">github.com/alamalik</a></li>
+      <li> Phone: +9647510268589</li>
+    </ul>
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <small>© <span id="year"></span> Alaa Malik. Built with HTML & CSS. </small>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple SPA-like tab/section switcher
+    const tabs = document.querySelectorAll('.tab, .actions a.btn');
+    const sections = document.querySelectorAll('section.section');
+
+    function showSection(id) {
+      sections.forEach(s => s.classList.toggle('active', s.id === id));
+      document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.target === id));
+      // Update hash without page jump
+      history.replaceState(null, '', '#' + id);
+    }
+
+    tabs.forEach(el => {
+      el.addEventListener('click', (e) => {
+        const target = e.currentTarget.dataset.target || (e.currentTarget.getAttribute('href') || '').replace('#','');
+        if (target && document.getElementById(target)) {
+          e.preventDefault();
+          showSection(target);
+        }
+      });
+    });
+
+    // On load: go to hash if present
+    const initial = location.hash?.replace('#','') || 'home';
+    if (document.getElementById(initial)) {
+      showSection(initial);
+    }
+  </script>
+</body>
+</html>
