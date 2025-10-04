@@ -1,0 +1,25 @@
+{
+  "name": "my_portfolio",
+  "version": "1.0.0",
+  "description": "Alaa_malik.github.io",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alamalik/ala-malik.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alamalik/ala-malik.github.io/issues"
+  },
+  "homepage": "https://github.com/alamalik/ala-malik.github.io#readme",
+  "devDependencies": {
+    "vuepress": "^2.0.0-rc.24"
+  }
+}
