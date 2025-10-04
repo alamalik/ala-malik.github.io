@@ -38,51 +38,62 @@
 
   <main>
     <!-- HOME -->
-    <section id="home" class="card hero-left" data-section>
-      <div class="hero" style="align-items:center">
-        <div>
-          <span class="tagline">UI/UX • Product Design • Frontend</span>
-          <h1>
-            Hi, I'm <span style="color:var(--accent)">Alaa</span><br />
-            <small style="color:var(--muted); font-weight:600">— I design usable, beautiful web experiences.</small>
-          </h1>
-          <p class="subtitle">I'm a Software Engineering student focusing on product design and front-end development. I build thoughtful interfaces, conduct design thinking, and prototype interactions.</p>
+<section id="home" class="card hero-left" data-section>
+  <div class="hero" style="align-items:center">
 
-          <div class="actions">
-            <a class="btn primary" data-target="projects">See case studies</a>
-            <a class="btn" data-target="contact">Work with me</a>
-            <a class="btn" href="https://github.com/alamalik" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
+    <!-- LEFT SIDE: text -->
+    <div>
+      <span class="tagline">Software Engineering Student</span>
+      <h1>
+        Hi, I'm <span style="color:var(--accent)">Alaa</span><br />
+        <small style="color:var(--muted); font-weight:600">
+          I craft clean, user-friendly web experiences.
+        </small>
+      </h1>
 
-          <div style="margin-top:1rem; display:flex; gap:.6rem; align-items:center; flex-wrap:wrap">
-            <div style="display:flex; gap:.4rem; align-items:center;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 2v20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-              <small style="color:var(--muted)">Currently open to internships & freelance</small>
-            </div>
-          </div>
-        </div>
+      <p class="subtitle">
+        I'm a Software Engineering student focusing on product design and front-end development.
+        I build thoughtful interfaces, conduct design thinking, and prototype interactions.
+      </p>
 
-        <aside class="card avatar-plate hero-right" aria-hidden="true" style="max-width:320px">
-          <div class="avatar">AM</div>
-          <div class="meta">Software Eng Student • UI/UX Enthusiast</div>
-        </aside>
+      <div class="actions">
+        <a class="btn primary" data-target="projects">See case studies</a>
+        <a class="btn" data-target="contact">Work with me</a>
+        <a class="btn" href="https://github.com/alamalik" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
-    </section>
+
+      <div style="margin-top:1rem; display:flex; gap:.6rem; align-items:center; flex-wrap:wrap">
+        <div style="display:flex; gap:.4rem; align-items:center;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2v20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <small style="color:var(--muted)">Currently open to internships & freelance</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: avatar -->
+    <aside class="card avatar-plate hero-right" aria-hidden="true" style="max-width:320px">
+      <div class="avatar">AM</div>
+      <div class="meta">Software Eng Student • UI/UX Enthusiast</div>
+    </aside>
+
+  </div>
+</section>
+
 
     <!-- ABOUT -->
     <section id="about" class="card" data-section hidden>
       <h2>About Me</h2>
-      <p style="color:var(--muted)">I combine engineering fundamentals with visual design to create products that are not only functional but delightful to use. My process focuses on research, iteration, accessibility, and data-informed decisions.</p>
+      <p style="color:var(--muted)">I blend technical problem-solving with design to build products that work well and feel good to use.</p>
 
       <div class="about-grid">
         <div class="card">
           <h3>Quick timeline</h3>
           <ol class="list">
-            <li><strong>2022</strong> — Started Software Engineering degree</li>
-            <li><strong>2023</strong> — Built first multi-page web app</li>
-            <li><strong>2024</strong> — Focused on UI/UX projects and prototyping</li>
+            <li><strong>2021</strong> — Started Software Engineering degree</li>
+            <li><strong>2023</strong> — Built first multi-page web site</li>
+            <li><strong>2025</strong> — Focused on UI/UX projects and prototyping</li>
           </ol>
         </div>
 
@@ -110,8 +121,8 @@
       <div class="grid cols-3">
         <div class="card">
           <h3>Design</h3>
-          <div class="skill"><label>UI & Visual Design</label><div class="bar"><div class="fill" style="width:86%"></div></div></div>
-          <div class="skill"><label>Prototyping</label><div class="bar"><div class="fill" style="width:78%"></div></div></div>
+          <div class="skill"><label>UI & Visual Design</label><div class="bar"><div class="fill" style="width:50%"></div></div></div>
+          <div class="skill"><label>Prototyping</label><div class="bar"><div class="fill" style="width:45%"></div></div></div>
           <div class="skill"><label>Research & Testing</label><div class="bar"><div class="fill" style="width:64%"></div></div></div>
         </div>
 
@@ -135,50 +146,109 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="card" data-section hidden>
-      <h2>Case studies</h2>
-      <p style="color:var(--muted)">Selected projects — each includes problem, process, and result. Click “View” to open a short case study.</p>
+    <!-- ================= PROJECTS ================= -->
+<section id="projects" class="card" data-section hidden>
+  <h2>Case studies</h2>
+  <p style="color:var(--muted)">
+    Selected projects — each includes problem, process, and result. Click “View” to open a short case study.
+  </p>
 
-      <div class="projects-grid">
-        <article class="project card">
-          <div class="thumb">
-            <svg width="90%" height="90%" viewBox="0 0 600 360">
-              <rect width="600" height="360" rx="12" fill="rgba(255,255,255,.02)" />
-              <rect x="28" y="28" width="200" height="28" rx="6" fill="rgba(255,255,255,.04)" />
-              <rect x="28" y="72" width="520" height="16" rx="6" fill="rgba(255,255,255,.03)" />
-            </svg>
-          </div>
-          <h3>Stop Food Waste</h3>
-          <div class="meta">Web app connecting donors & receivers — maps, listings, and roles.</div>
-          <div class="tags">
-            <span class="chip">React</span><span class="chip">Figma</span><span class="chip">Maps API</span>
-          </div>
-          <div class="actions">
-            <button class="btn" data-open="case-stop">View</button>
-            <a class="btn" href="https://github.com/alamalik/Stop-Food-Waste.github.io" target="_blank" rel="noopener noreferrer">Code</a>
-          </div>
-        </article>
-
-        <article class="project card">
-          <div class="thumb">
-            <svg width="90%" height="90%" viewBox="0 0 600 360">
-              <rect width="600" height="360" rx="12" fill="rgba(255,255,255,.02)" />
-              <circle cx="100" cy="80" r="36" fill="rgba(255,255,255,.04)" />
-              <rect x="160" y="64" width="360" height="18" rx="6" fill="rgba(255,255,255,.03)" />
-            </svg>
-          </div>
-          <h3>Pet Shop Management</h3>
-          <div class="meta">Desktop system for managing inventory, customers, and invoices.</div>
-          <div class="tags">
-            <span class="chip">Java</span><span class="chip">MySQL</span>
-          </div>
-          <div class="actions">
-            <button class="btn" data-open="case-pet">View</button>
-            <a class="btn" href="https://github.com/alamalik/PetShopManagement.github.io" target="_blank" rel="noopener noreferrer">Code</a>
-          </div>
-        </article>
+  <div class="projects-grid">
+    <!-- Project 1 -->
+    <article class="project card">
+      <div class="thumb">
+        <svg width="90%" height="90%" viewBox="0 0 600 360">
+          <rect width="600" height="360" rx="12" fill="rgba(255,255,255,.02)" />
+          <rect x="28" y="28" width="200" height="28" rx="6" fill="rgba(255,255,255,.04)" />
+          <rect x="28" y="72" width="520" height="16" rx="6" fill="rgba(255,255,255,.03)" />
+        </svg>
       </div>
-    </section>
+      <h3>Stop Food Waste</h3>
+      <div class="meta">Web app connecting donors & receivers — maps, listings, and roles.</div>
+      <div class="tags">
+        <span class="chip">React</span>
+        <span class="chip">Figma</span>
+        <span class="chip">Maps API</span>
+      </div>
+      <div class="actions">
+        <button class="btn" data-open="case-stop">View</button>
+        <a class="btn" href="https://github.com/alamalik/Stop-Food-Waste.github.io" 
+           target="_blank" rel="noopener noreferrer">Code</a>
+      </div>
+    </article>
+
+    <!-- Project 2 -->
+    <article class="project card">
+      <div class="thumb">
+        <svg width="90%" height="90%" viewBox="0 0 600 360">
+          <rect width="600" height="360" rx="12" fill="rgba(255,255,255,.02)" />
+          <circle cx="100" cy="80" r="36" fill="rgba(255,255,255,.04)" />
+          <rect x="160" y="64" width="360" height="18" rx="6" fill="rgba(255,255,255,.03)" />
+        </svg>
+      </div>
+      <h3>Pet Shop Management</h3>
+      <div class="meta">Desktop system for managing inventory, customers, and invoices.</div>
+      <div class="tags">
+        <span class="chip">Java</span>
+        <span class="chip">MySQL</span>
+      </div>
+      <div class="actions">
+        <button class="btn" data-open="case-pet">View</button>
+        <a class="btn" href="https://github.com/alamalik/PetShopManagement.github.io" 
+           target="_blank" rel="noopener noreferrer">Code</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ========== PROJECT MODALS ========== -->
+
+<!-- Stop Food Waste Modal -->
+<div class="modal" id="case-stop" hidden>
+  <div class="modal-content card">
+    <button class="close" data-close>&times;</button>
+    <h2>Stop Food Waste</h2>
+    <p class="meta">Web app connecting donors and receivers of leftover food.</p>
+    <p>
+      <strong>Overview:</strong> Stop Food Waste is a web platform that connects donors
+      with organizations in need. Users can post available food and nearby receivers
+      get instant updates.
+    </p>
+    <p>
+      <strong>Tech Stack:</strong> React, Maps API, Firebase, Figma (UI design)
+    </p>
+    <p>
+      <strong>My Role:</strong> Front-end developer and UX designer.
+    </p>
+    <p>
+      <strong>Result:</strong> Reduced food waste and improved local donation logistics.
+    </p>
+  </div>
+</div>
+
+<!-- Pet Shop Management Modal -->
+<div class="modal" id="case-pet" hidden>
+  <div class="modal-content card">
+    <button class="close" data-close>&times;</button>
+    <h2>Pet Shop Management System</h2>
+    <p class="meta">Desktop system for managing inventory, customers, and invoices.</p>
+    <p>
+      <strong>Overview:</strong> This Java application helps pet shops manage products,
+      suppliers, customers, and sales records efficiently.
+    </p>
+    <p>
+      <strong>Tech Stack:</strong> Java, MySQL
+    </p>
+    <p>
+      <strong>My Role:</strong> Full-stack developer.
+    </p>
+    <p>
+      <strong>Result:</strong> Simplified daily operations and reduced manual record-keeping by 70%.
+    </p>
+  </div>
+</div>
+
 
     <!-- CONTACT -->
     <section id="contact" class="card" data-section hidden>
@@ -219,16 +289,7 @@
     <small>© <span id="year"></span> Alaa Malik — UI/UX & Frontend. Built with care.</small>
   </footer>
 
-  <!-- Case Study Modal -->
-  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="sheet card">
-      <div style="display:flex; align-items:center; gap:1rem">
-        <h3 id="modal-title">Case study</h3>
-        <button class="close" aria-label="Close modal">✕</button>
-      </div>
-      <div id="modal-body" style="margin-top:1rem; color:var(--muted)"></div>
-    </div>
-  </div>
+ 
 
   <!-- External JS -->
   <script src="js/main.js"></script>

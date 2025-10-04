@@ -1,7 +1,28 @@
 // Modal logic
-const modal = document.getElementById('modal');
-const modalBody = document.getElementById('modal-body');
-const modalTitle = document.getElementById('modal-title');
+// === MODAL LOGIC ===
+
+// Open modal when "View" clicked
+document.querySelectorAll("[data-open]").forEach(button => {
+  button.addEventListener("click", () => {
+    const modalId = button.getAttribute("data-open");
+    document.getElementById(modalId).hidden = false;
+  });
+});
+
+// Close modal when "X" clicked
+document.querySelectorAll("[data-close]").forEach(button => {
+  button.addEventListener("click", () => {
+    button.closest(".modal").hidden = true;
+  });
+});
+
+// Close modal when clicking outside
+document.querySelectorAll(".modal").forEach(modal => {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.hidden = true;
+  });
+});
+
 
 // Open modal
 document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', () => {
