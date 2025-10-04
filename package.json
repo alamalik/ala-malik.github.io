@@ -21,5 +21,8 @@
   "homepage": "https://github.com/alamalik/ala-malik.github.io#readme",
   "devDependencies": {
     "vuepress": "^2.0.0-rc.24"
+  },
+  "dependencies": {
+    "@vuepress/theme-default": "^1.9.10"
   }
 }

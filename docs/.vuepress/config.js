@@ -1,11 +1,12 @@
-import { defaultTheme } from 'vuepress'
+import { defineUserConfig } from 'vuepress'
+import themeDefault from '@vuepress/theme-default'
 
-export default {
+export default defineUserConfig({
   lang: 'en-US',
   title: 'Alaa Malik Portfolio Docs',
   description: 'Case studies and project documentation',
 
-  theme: defaultTheme({
+  theme: themeDefault({
     logo: '/logo.png',
     navbar: [
       { text: 'Home', link: '/' },
@@ -16,9 +17,12 @@ export default {
       '/projects/': [
         {
           text: 'Projects',
-          children: ['/projects/stop-food-waste.md', '/projects/pet-shop.md'],
+          children: [
+            '/projects/stop-food-waste.md',
+            '/projects/pet-shop.md',
+          ],
         },
       ],
     },
   }),
-}
+})
