@@ -1,0 +1,20 @@
+.contact-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+input, textarea {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  resize: vertical;
+}
+input:focus, textarea:focus {
+  outline: 1px solid var(--accent);
+}

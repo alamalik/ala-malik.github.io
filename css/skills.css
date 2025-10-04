@@ -1,0 +1,38 @@
+.skill {
+  margin-bottom: 1rem;
+}
+.skill label {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+.bar {
+  background: var(--surface);
+  border-radius: 6px;
+  height: 6px;
+  overflow: hidden;
+}
+.fill {
+  background: var(--accent);
+  height: 100%;
+  border-radius: 6px 0 0 6px;
+}
+.skill {
+  margin-bottom: 1rem;
+}
+.skill label {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+.bar {
+  background: var(--surface);
+  border-radius: 6px;
+  height: 6px;
+  overflow: hidden;
+}
+.fill {
+  background: var(--accent);
+  height: 100%;
+  border-radius: 6px 0 0 6px;
+}

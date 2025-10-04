@@ -1,0 +1,28 @@
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project .thumb {
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 200px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project .tags {
+  margin: 0.6rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project .actions {
+  display: flex;
+  gap: 0.5rem;
+}
